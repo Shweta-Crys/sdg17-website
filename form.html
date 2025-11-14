@@ -7,25 +7,90 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; background:#f0f8ff; }
-  form { background: white; padding:20px; border-radius:10px; max-width:500px; margin:auto; }
-  input, textarea, button { width:100%; margin:10px 0; padding:10px; border-radius:5px; }
-  button { background:#006699; color:white; border:none; cursor:pointer; }
-  .success-message { color:green; display:none; }
+  body { 
+    font-family: "Poppins", Arial, sans-serif; 
+    padding: 40px;
+    background: linear-gradient(135deg, #dff1ff, #a7d4ff);
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #003d66;
+    margin-bottom: 25px;
+  }
+
+  form { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    max-width: 550px; 
+    margin: auto; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  input, textarea {
+    width: 100%;
+    margin: 12px 0;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #bcd7e6;
+    font-size: 15px;
+    background: #f8fcff;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #0088cc;
+    background: #ffffff;
+    outline: none;
+  }
+
+  button { 
+    width: 100%; 
+    margin-top: 15px; 
+    padding: 14px; 
+    border-radius: 8px; 
+    background: linear-gradient(135deg, #0077b3, #00527a);
+    color: white; 
+    font-size: 16px;
+    border: none; 
+    cursor: pointer; 
+    letter-spacing: 0.5px;
+  }
+
+  button:hover {
+    background: linear-gradient(135deg, #0088cc, #006999);
+  }
+
+  .success-message { 
+    color: #1d8f36; 
+    margin-top: 15px;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+  }
 </style>
 </head>
+
 <body>
 
 <h2>Submit Your Project</h2>
+
 <form id="projectForm">
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="email" name="email" placeholder="Email Address" required>
   <input type="text" name="projectName" placeholder="Project Name" required>
   <textarea name="description" placeholder="Project Description" rows="4" required></textarea>
-  <input type="url" name="fileLink" placeholder="Paste File Link (Google Drive/Dropbox etc.)" required>
+  <input type="url" name="fileLink" placeholder="Paste File Link (Google Drive / Dropbox)" required>
+
   <button type="submit">Submit Project</button>
-  <div class="success-message" id="successMessage">Project submitted successfully!</div>
+
+  <div class="success-message" id="successMessage">
+    Project submitted successfully!
+  </div>
 </form>
+
 
 <script>
  const firebaseConfig = {
