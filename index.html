@@ -32,19 +32,46 @@
     .gallery { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
     .gallery img { width:300px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
 
-    /* Buttons Section */
-    .features { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px; }
-    .feature-box {
-        background:white; padding:20px; border-radius:12px;
-        box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center;
-        transition:transform .3s, box-shadow .3s;
-        cursor:pointer;
-    }
-    .feature-box:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
-    .feature-box i { font-size:2.3em; margin-bottom:10px; color:#00cc99; }
-    a { text-decoration:none; color:inherit; }
+     /* Buttons Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: stretch; /* ensures all boxes are equal height */
+}
+
+.feature-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform .3s, box-shadow .3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers content vertically */
+    height: 100%; /* makes box fill the grid row height */
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.feature-box i {
+    font-size: 2.3em;
+    margin-bottom: 10px;
+    color: #00cc99;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
     footer { text-align:center; padding:20px; background:black; color:white; margin-top:40px; }
+
 </style>
 </head>
 
@@ -90,22 +117,20 @@
     <h2 class="section-title">Explore the Platform</h2>
 
     <div class="features">
-        <a href="form.html">
-            <div class="feature-box">
-                <i>📤</i>
-                <h3>Submit Projects</h3>
-                <p>Upload your SDG 17 project to inspire others.</p>
-            </div>
-        </a>
-
-        <a href="projects.html">
+       <a href="projects.html">
             <div class="feature-box">
                 <i>📂</i>
                 <h3>View Projects</h3>
                 <p>Discover global contributions toward collaboration.</p>
             </div>
         </a>
-
+       <a href="form.html">
+            <div class="feature-box">
+                <i>📤</i>
+                <h3>Submit Projects</h3>
+                <p>Upload your SDG 17 project to inspire others.</p>
+            </div>
+        </a>
         <a href="collaborate.html">
             <div class="feature-box">
                 <i>🤝</i>
