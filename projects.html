@@ -1,2 +1,45 @@
-<h1>Projects Coming Soon</h1>
-<p>We will list all submitted projects here.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDG 17 Projects</title>
+<style>
+body { font-family: Arial,sans-serif; margin:0; background:linear-gradient(135deg,#dff1ff,#a7d4ff); color:#003366; }
+header, footer { background:#3a6ea5; color:#fff; text-align:center; padding:20px; }
+section { max-width:900px; margin:30px auto; padding:0 15px; }
+.stats { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+.stat-box { background:#b0d4ff; padding:30px; border-radius:15px; width:200px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.1); }
+.stat-box h2 { margin:0; font-size:2.5rem; }
+.projects-container { display:flex; flex-direction:column; gap:25px; }
+.project-card { background:#e1f0ff; border-radius:12px; padding:25px; transition:transform .2s; }
+.project-card:hover { transform:translateY(-5px); }
+.project-card h3 { margin-top:0; font-size:1.3rem; }
+.project-card p { margin:10px 0; line-height:1.5; }
+.status { display:inline-block; padding:5px 15px; border-radius:12px; color:#fff; margin-top:10px; font-size:.9rem; }
+.ongoing { background:#38a169; }
+.completed { background:#e74c3c; }
+</style>
+</head>
+<body>
+
+<header><h1>Discover Global Collaboration Projects</h1></header>
+
+<section class="stats">
+  <div class="stat-box"><h2>12</h2><p>Total Projects</p></div>
+  <div class="stat-box"><h2>8</h2><p>Countries Involved</p></div>
+  <div class="stat-box"><h2>5</h2><p>Ongoing Projects</p></div>
+</section>
+
+<section class="projects-container">
+  <div class="project-card"><h3>Clean Water Initiative</h3><p>Providing access to clean drinking water in rural communities.</p><span class="status ongoing">Ongoing</span></div>
+  <div class="project-card"><h3>Renewable Energy Partnership</h3><p>Collaboration between 3 countries to develop solar energy projects.</p><span class="status completed">Completed</span></div>
+  <div class="project-card"><h3>Education for All</h3><p>Global initiative to improve access to education for children.</p><span class="status ongoing">Ongoing</span></div>
+  <div class="project-card"><h3>Healthcare Outreach Program</h3><p>Providing healthcare services in underprivileged regions worldwide.</p><span class="status ongoing">Ongoing</span></div>
+  <div class="project-card"><h3>Tech for SDG 17</h3><p>Using technology to strengthen global partnerships and communication.</p><span class="status completed">Completed</span></div>
+</section>
+
+<footer>&copy; 2025 SDG 17 Collaboration Projects</footer>
+
+</body>
+</html>
