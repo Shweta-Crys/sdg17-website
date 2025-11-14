@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Project</title>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; background:#f0f8ff; }
+  form { background: white; padding:20px; border-radius:10px; max-width:500px; margin:auto; }
+  input, textarea, button { width:100%; margin:10px 0; padding:10px; border-radius:5px; }
+  button { background:#006699; color:white; border:none; cursor:pointer; }
+  .success-message { color:green; display:none; }
+</style>
+</head>
+<body>
+
+<h2>Submit Your Project</h2>
+<form id="projectForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <input type="text" name="projectName" placeholder="Project Name" required>
+  <textarea name="description" placeholder="Project Description" rows="4" required></textarea>
+  <input type="url" name="fileLink" placeholder="Paste File Link (Google Drive/Dropbox etc.)" required>
+  <button type="submit">Submit Project</button>
+  <div class="success-message" id="successMessage">Project submitted successfully!</div>
+</form>
+
+<script>
+ const firebaseConfig = {
+    apiKey: "AIzaSyAGI7QWpTXTjoheA5jjlJROyZBq_wR-OnY",
+    authDomain: "sdg17-website.firebaseapp.com",
+    projectId: "sdg17-website",
+    storageBucket: "sdg17-website.firebasestorage.app",
+    messagingSenderId: "744397696586",
+    appId: "1:744397696586:web:f43c0146448a4abfce40b3",
+    measurementId: "G-QD03MERFRN"
+  };
+ 
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  const form = document.getElementById('projectForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      projectName: form.projectName.value,
+      description: form.description.value,
+      fileLink: form.fileLink.value,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    db.collection('projects').add(data)
+      .then(() => {
+        successMessage.style.display = 'block';
+        form.reset();
+      })
+      .catch(err => alert("Error: " + err));
+  });
+</script>
+
+</body>
+</html>
