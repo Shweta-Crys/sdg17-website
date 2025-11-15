@@ -12,13 +12,7 @@
     padding: 40px;
     background: linear-gradient(135deg, #dff1ff, #a7d4ff);
   }
-header, footer { background:#3a6ea5; color:#fff; text-align:center; padding:20px; }
- header h1 {
-  margin: 0;
-  padding: 0;
-}
-
-  h1 {
+h1 {
     text-align: center;
     font-size: 35px;
     font-weight: 600;
@@ -31,7 +25,7 @@ header, footer { background:#3a6ea5; color:#fff; text-align:center; padding:20px
     padding: 30px; 
     border-radius: 15px; 
     max-width: 550px; 
-    margin: 40px; 
+    margin: auto; 
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
 
@@ -80,7 +74,7 @@ header, footer { background:#3a6ea5; color:#fff; text-align:center; padding:20px
 
 <body>
 
-<header><h1>Submit Your Project</h1></header>
+<h1>Submit Your Project</h1>
 
 <form id="projectForm">
   <input type="text" name="name" placeholder="Your Name" required>
@@ -136,6 +130,5 @@ header, footer { background:#3a6ea5; color:#fff; text-align:center; padding:20px
       .catch(err => alert("Error: " + err));
   });
 </script>
-<footer>&copy; 2025 SDG 17 Collaboration Projects</footer>
 </body>
 </html>
